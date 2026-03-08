@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Harry Soe | ポートフォリオ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #003366;
+      color: white;
+      padding: 12px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      padding-top: 100px;
+      text-align: center;
+      animation: fadeIn 2s;
+    }
+
+    header img {
+      width: 150px;
+      border-radius: 50%;
+      border: 4px solid #003366;
+    }
+
+    section {
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 10px;
+      animation: fadeUp 1.5s;
+    }
+
+    h2 {
+      color: #003366;
+    }
+
+    .project {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity:1;}
+    }
+
+    @keyframes fadeUp {
+      from {transform: translateY(30px); opacity:0;}
+      to {transform: translateY(0); opacity:1;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home">ホーム</a>
+  <a href="#about">自己紹介</a>
+  <a href="#skills">スキル</a>
+  <a href="#projects">制作物</a>
+  <a href="#contact">連絡先</a>
+</nav>
+
+<header id="home">
+  <img src="profile.jpg" alt="プロフィール写真">
+  <h1>Harry Soe</h1>
+  <p>ITエンジニア志望 / Webアプリケーション開発学習中</p>
+</header>
+
+<section id="about">
+  <h2>自己紹介</h2>
+  <p>
+    私はIT分野を専攻している学生です。JavaおよびWebアプリケーション開発を中心に学習しております。
+    小規模なシステム開発を通して、設計から実装までの経験を積んでおります。
+    将来はユーザーにとって使いやすいシステムを開発できるエンジニアを目指しています。
+  </p>
+</section>
+
+<section id="skills">
+  <h2>スキル</h2>
+  <ul>
+    <li>HTML / CSS / JavaScript</li>
+    <li>Java</li>
+    <li>MySQL</li>
+    <li>Git / GitHub</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>制作物</h2>
+
+  <div class="project">
+    <h3>POSシステム（Java）</h3>
+    <p>
+      商品管理、売上管理、ログイン機能を備えた販売管理システムを開発しました。
+      データベースと連携し、基本的なCRUD処理を実装しています。
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>バガン紹介Webサイト</h3>
+    <p>
+      ミャンマーのバガン遺跡を紹介する観光Webサイトを制作しました。
+      HTML・CSS・JavaScriptを用いて、レスポンシブ対応を行いました。
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>ポートフォリオサイト</h3>
+    <p>
+      本サイトは自身のスキルおよび制作物を紹介する目的で作成したポートフォリオサイトです。
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>連絡先</h2>
+  <p>Email: harry@example.com</p>
+  <p>GitHub: https://github.com/yourusername</p>
+</section>
+
+<footer>
+  <p>© 2026 Harry Soe</p>
+</footer>
+
+</body>
+</html>
