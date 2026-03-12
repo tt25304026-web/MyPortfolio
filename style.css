@@ -88,36 +88,79 @@ a {
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    transition: var(--transition);
+    transition: transform 0.25s ease;
 }
 
 .logo:hover {
-    transform: scale(1.02);
+    transform: translateY(-1px);
 }
 
 .logo-icon {
-    width: 42px;
-    height: 42px;
-    background: white;
-    border-radius: 12px;
+    position: relative;
+    width: auto;
+    height: 40px;
+    border-radius: 999px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 95, 115, 0.15);
-    padding: 6px;
-    border: 1.5px solid rgba(0, 95, 115, 0.1);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    padding: 0;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.logo-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .logo-icon img {
-    width: 100%;
+    display: block;
+    width: auto;
     height: 100%;
     object-fit: contain;
+    object-position: center;
+    transform: none;
+    padding: 0;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.logo:hover .logo-icon {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+    .logo-icon {
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+    }
+    .logo-icon::before {
+        background: linear-gradient(135deg, rgba(10, 147, 150, 0.9), rgba(148, 210, 189, 0.85));
+    }
+    .logo-icon img {
+        filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.55));
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-icon {
+        height: 36px;
+    }
 }
 
 .logo-text {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 0.6px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
